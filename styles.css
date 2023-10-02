@@ -5,7 +5,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(35, 44, 64);
+    background: rgb(16, 21, 31);
     overflow: hidden;
     cursor: pointer; 
 }

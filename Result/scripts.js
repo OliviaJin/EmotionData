@@ -6,19 +6,19 @@ let message2;
 switch (emotion) {
   case 'happy':
     message = 'Looks like you feel happy now.';
-    message2 = 'I also feel happy a lot, and happiness is the emotion I most often have.';
+    message2 = 'I\'m happy too, happiness is the emotion I most often have.';
     break;
   case 'sad':
     message = 'Looks like you feel sad now.';
-    message2 = 'I\'m sorry you\'re feeling sad right now, I get sadness from time to time too.';
+    message2 = 'What\'s bothering you? You can talk to a friend, it will make you feel better';
     break;
   case 'angry':
     message = 'Looks like you feel angry now.';
-    message2 = 'I\'m sorry you\'re feeling angry right now, I get anger coming up too.';
+    message2 = 'I also experience anger from time to time, I understand that controlling emotions can be difficult';
     break;
   case 'surprised':
     message = 'Looks like you feel surprised now.';
-    message2 = 'I got surprised a lot too.';
+    message2 = 'I often have moments of surprise in my daily life.';
     break;
   default:
     message = 'Unable to determine your emotion.';

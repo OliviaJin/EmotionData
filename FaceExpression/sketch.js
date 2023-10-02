@@ -165,7 +165,6 @@ function captureEmotion() {
     console.log('Distances:', dist44_50, dist24_26, dist20_63, dist47_53);
 console.log('Conditions:', dist44_50 - initialDist44_50 > maxChange, dist24_26 - initialDist24_26 > maxChange);
 
-    // Display the emotion on a new page
     if (emotion) {
       window.location.href = `../Result/emotion.html?emotion=${emotion}`;
       console.log('Distances:', dist44_50, dist24_26, dist20_63, dist47_53);

@@ -14,7 +14,7 @@ function init() {
     const loader = new GLTFLoader();
     loader.load('smiling.glb', (gltf) => {
         model = gltf.scene;
-        model.scale.set(8, 8, 8);
+        model.scale.set(7, 7, 7);
         scene.add(model);
     });
 
@@ -38,7 +38,7 @@ function animate() {
     requestAnimationFrame(animate);
 
     if (model) {
-        model.rotation.x = mouseY;
+        model.rotation.x = - mouseY;
         model.rotation.y = mouseX;
     }
 
