@@ -4,3 +4,14 @@
 body, html {
     background: black;
 }
+#captureBtn {
+    position: fixed; 
+    right: 220px; 
+    top: 220px;
+    border: 2px solid white; 
+    border-radius: 50px; 
+    background-color: transparent; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+}
