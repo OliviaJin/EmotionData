@@ -12,13 +12,14 @@ function init() {
     document.body.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load('Emotion2.glb', (gltf) => {
+    loader.load('smiling.glb', (gltf) => {
         model = gltf.scene;
+        model.scale.set(8, 8, 8);
         scene.add(model);
     });
 
     const light = new THREE.PointLight(0xFFFFFF, 1);
-    light.position.set(5, 5, 5);
+    light.position.set(0, 0, 10);
     scene.add(light);
 
     camera.position.z = 5;

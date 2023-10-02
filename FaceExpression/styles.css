@@ -2,7 +2,7 @@
     font-family: sans-serif;
 }
 body, html {
-    background: black;
+    background: rgb(35, 44, 64);
 }
 #captureBtn {
     position: fixed; 
