@@ -1,7 +1,11 @@
+let textElement = document.getElementById('text');
+let clickCount = 0; 
+
 document.body.addEventListener('click', function() {
-    console.log('Body clicked!'); // Log a message to the console when the body is clicked
-    clickCount++; 
-    console.log('Click count:', clickCount); // Log the current click count
+    console.log('Body clicked!');
+    clickCount++;
+    console.log('Click count:', clickCount);
+
     if (clickCount === 1) {
         textElement.classList.add('fade-out');
         setTimeout(function() {
