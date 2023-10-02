@@ -12,7 +12,7 @@ function init() {
     document.body.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load('Emotion.glb', (gltf) => {
+    loader.load('Emotion2.glb', (gltf) => {
         model = gltf.scene;
         scene.add(model);
     });
