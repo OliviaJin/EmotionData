@@ -7,7 +7,6 @@ var positions;
 
 
 function setup() {
-  
   capture = createCapture({
     audio: false,
     video: {
@@ -22,6 +21,8 @@ function setup() {
   createCanvas(w, h*2);
   capture.size(w, h);
   capture.hide();
+  canvas.style.position = 'absolute';
+  canvas.style.zIndex = '2';
 
   tracker = new clm.tracker();
   tracker.init();

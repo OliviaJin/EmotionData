@@ -4,6 +4,12 @@
 body, html {
     background: rgb(16, 21, 31);
 }
+p{
+    color:white;
+    position:fixed;
+    left:220px;
+    top:220px;
+}
 #captureBtn {
     position: fixed; 
     right: 220px; 
