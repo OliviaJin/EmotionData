@@ -6,13 +6,12 @@
     font-family: 'Mer';
     src: url('Mermaid.ttf') format('truetype');
 }
-* {
-    font-family: Sun;
-}
+
 body, html {
     background: rgb(16, 21, 31);
 }
-p{
+
+#text {
     color:white;
     font-family: Mer;
     position:fixed;
