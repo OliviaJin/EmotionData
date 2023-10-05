@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Sun';
+    src: url('Sunflower.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mer';
+    src: url('Mermaid.ttf') format('truetype');
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -26,16 +36,18 @@ canvas {
 
 #text {
     color: #ffffff;
-    font-size: 24px;
+    font-family: Sun;
+    font-size: 40px;
     line-height: 1.5;
     transition: opacity 1s ease-in-out; 
     opacity: 1;
 }
 
-p{
+#instruction{
     color:#ffffff;
-    font-size:16px;
-    bottom: 50px;
+    font-family: Mer;
+    font-size:20px;
+    bottom: 40px;
 }
 
 .fade-out {

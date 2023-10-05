@@ -24,6 +24,7 @@ function setup() {
   canvas.style.position = 'absolute';
   canvas.style.zIndex = '2';
 
+
   tracker = new clm.tracker();
   tracker.init();
   tracker.start(capture.elt);
@@ -149,12 +150,12 @@ function captureEmotion() {
       emotion = 'happy';
     }
 
-    if (dist24_26 < initialDist24_26 && initialDist24_26 - dist24_26 > maxChange) {
+    if (dist24_26 < initialDist24_26 && dist44_50 < initialDist44_50 && initialDist24_26 - dist24_26 > maxChange) {
       maxChange = initialDist24_26 - dist24_26;
       emotion = 'sad';
     }
 
-    if (dist20_63 > initialDist20_63 && dist20_63 - initialDist20_63 > maxChange) {
+    if (dist20_63 > initialDist20_63 && dist47_53 < initialDist47_53 && dist20_63 - initialDist20_63 && initialDist47_53 - dist47_53 > maxChange) {
       maxChange = dist20_63 - initialDist20_63;
       emotion = 'angry';
     }
