@@ -8,7 +8,7 @@
 
         @font-face {
             font-family: 'Mer';
-            src: url('Mermaid.ttf') format('truetype');
+            src: url('/Mermaid.ttf') format('truetype');
         }
 
         body {
@@ -83,9 +83,13 @@
         <img id="draw-button" src="surprised.png" alt="Draw Button">
         <canvas id="line-canvas"></canvas>
         <div class="hover-text red">Got a message from unexpected person 25%</div>
-        <div class="hover-text green">Friends 15%</div>
+        <div class="hover-text green">Friends 33%</div>
         <div class="hover-text blue">Watch the News 42%</div>
     </div>
+
+    <audio id="bgm" src="/Result/heartbeat.wav" autoplay loop controls>
+      Your browser does not support the audio element.
+    </audio>
 
     <p>Keep clicking on the image <br> <br>Hover the line after each click :)</p>
 
@@ -101,7 +105,7 @@
             "#D9663D", // Small Yellow
         ];
 
-        const probabilities = [25, 15, 42]; // Corresponding to the color probabilities
+        const probabilities = [25, 33, 42]; // Corresponding to the color probabilities
 
         const hoverTexts = document.querySelectorAll('.hover-text');
 

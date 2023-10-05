@@ -1,6 +1,6 @@
         @font-face {
             font-family: 'Mer';
-            src: url('Mermaid.ttf') format('truetype');
+            src: url('/Mermaid.ttf') format('truetype');
         }
 
         body {

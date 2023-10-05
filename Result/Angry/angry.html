@@ -8,7 +8,7 @@
 
         @font-face {
             font-family: 'Mer';
-            src: url('Mermaid.ttf') format('truetype');
+            src: url('/Mermaid.ttf') format('truetype');
         }
         body {
             background-color: rgb(16, 21, 31);
@@ -86,6 +86,10 @@
         <div class="hover-text green">Some baf happened(random) 20%</div>
     </div>
 
+    <audio id="bgm" src="/Result/heartbeat.wav" autoplay loop controls>
+      Your browser does not support the audio element.
+    </audio>
+
     <p>Keep clicking on the image <br> <br>Hover the line after each click :)</p>
 
     <script>
@@ -160,6 +164,9 @@
         document.getElementById("draw-button").addEventListener("click", () => {
             drawCurve();
         });
+        const audio = document.getElementById("bgm");
+        audio.playbackRate = 2.0; 
+
     </script>
 </body>
 </html>
