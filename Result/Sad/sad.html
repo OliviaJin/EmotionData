@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad</title>
+    <style>
+        body {
+            background-color: rgb(16, 21, 31);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        #draw-button {
+            cursor: pointer;
+            width: 200px; 
+            height: auto; 
+            position: absolute;
+            z-index: 1; 
+            transition: transform 0.2s ease-in-out; 
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; 
+        }
+
+        .hover-text {
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            display: none;
+            pointer-events: none; 
+            transition: font-size 0.2s ease-in-out; 
+        }
+
+        #draw-button:hover {
+            transform: scale(1.1); 
+        }
+
+        p{
+          color:white;
+          font-size:16px;
+          top:30px;
+          left:30px;
+          position:fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="button-container">
+        <img id="draw-button" src="sad.png" alt="Draw Button">
+        <canvas id="line-canvas"></canvas>
+        <div class="hover-text red">Got bad news 10%</div>
+        <div class="hover-text green">Face problem when doing project 15%</div>
+        <div class="hover-text blue">A long walk 20%</div>
+        <div class="hover-text yellow">Wake up with alarm clock 30%</div>
+        <div class="hover-text pink">The subway takes forever to get here 25%</div>
+    </div>
+
+    <p>Keep clicking on the image <br> <br>Try to hover the line after each click :)</p>
+
+    <script>
+        const canvas = document.getElementById("line-canvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const colors = [
+            "#BF8AA3", // Pink
+            "#2A4B8C", // Yellow
+            "#2D77A6", // Small Yellow
+            "#41A6A6", // Small Pink
+            "#F2F2F2", // Small Blue
+        ];
+
+        const probabilities = [10, 15, 20, 30, 25]; // Corresponding to the color probabilities
+
+        const hoverTexts = document.querySelectorAll('.hover-text');
+
+        const getRandomColor = () => {
+            const randomNum = Math.random() * 100;
+            let sum = 0;
+            for (let i = 0; i < colors.length; i++) {
+                sum += probabilities[i];
+                if (randomNum <= sum) {
+                    return colors[i];
+                }
+            }
+            // Default to white if something goes wrong
+            return "#FFFFFF";
+        };
+
+        const drawCurve = () => {
+            const startX = 0;
+            const startY = canvas.height / 2;
+            const endX = canvas.width;
+            const endY = canvas.height / 2;
+            const controlX1 = canvas.width / 4;
+            const controlY1 = Math.random() * canvas.height;
+            const controlX2 = (canvas.width / 4) * 3;
+            const controlY2 = Math.random() * canvas.height;
+            const color = getRandomColor();
+
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Show the corresponding text near the cursor when hovering over the line
+            canvas.addEventListener('mousemove', (e) => {
+                hoverTexts.forEach((text) => {
+                    text.style.display = 'none';
+                });
+
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+
+                if (ctx.isPointInStroke(mouseX, mouseY)) {
+                    if (color === '#8C3030') {
+                        document.querySelector('.hover-text.red').style.display = 'block';
+                        document.querySelector('.hover-text.red').style.left = mouseX + 'px';
+                        document.querySelector('.hover-text.red').style.top = mouseY - 40 + 'px';
+                    } else if (color === '#2A4B8C') {
+                        document.querySelector('.hover-text.green').style.display = 'block';
+                        document.querySelector('.hover-text.green').style.left = mouseX + 'px';
+                        document.querySelector('.hover-text.green').style.top = mouseY - 40 + 'px';
+                    } else if (color === '#F2C84B') {
+                        document.querySelector('.hover-text.blue').style.display = 'block';
+                        document.querySelector('.hover-text.blue').style.left = mouseX + 'px';
+                        document.querySelector('.hover-text.blue').style.top = mouseY - 40 + 'px';
+                    } else if (color === '#BF244E') {
+                        document.querySelector('.hover-text.yellow').style.display = 'block';
+                        document.querySelector('.hover-text.yellow').style.left = mouseX + 'px';
+                        document.querySelector('.hover-text.yellow').style.top = mouseY - 40 + 'px';
+                    } else if (color === '#F2F2F2') {
+                        document.querySelector('.hover-text.pink').style.display = 'block';
+                        document.querySelector('.hover-text.pink').style.left = mouseX + 'px';
+                        document.querySelector('.hover-text.pink').style.top = mouseY - 40 + 'px';
+                    } 
+                }
+            });
+        };
+
+        document.getElementById("draw-button").addEventListener("click", () => {
+            drawCurve();
+        });
+    </script>
+</body>
+</html>

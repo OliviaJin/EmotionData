@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(16, 21, 31);
+    margin: 0;
+    overflow: hidden;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+#draw-button {
+    cursor: pointer;
+    width: 200px; 
+    height: auto; 
+    position: absolute;
+    z-index: 1; 
+    transition: transform 0.2s ease-in-out; 
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; 
+}
+
+.hover-text {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    display: none;
+    pointer-events: none; 
+    transition: font-size 0.2s ease-in-out; 
+}
+
+#draw-button:hover {
+    transform: scale(1.1); 
+}
+
+p{
+  color:white;
+  font-size:16px;
+  top:30px;
+  left:30px;
+  position:fixed;
+}

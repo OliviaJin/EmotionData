@@ -32,6 +32,12 @@ canvas {
     opacity: 1;
 }
 
+p{
+    color:#ffffff;
+    font-size:16px;
+    bottom: 50px;
+}
+
 .fade-out {
     opacity: 0 !important;
 }
